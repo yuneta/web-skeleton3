@@ -22,7 +22,10 @@ from mako.template import Template
 from mako.runtime import Context
 from mako.exceptions import TopLevelLookupException
 
-from . import __version__
+try:
+   from . import __version__
+except:  # pragma: no cover
+   __version__ = '0.0.0'
 
 if sys.version_info[:2] < (3, 5):
    raise RuntimeError('Requires Python 3.5 or better')
@@ -346,11 +349,24 @@ class WebSkeleton(object):
             output_path
         )
 
-        assets_env = self.get_assets_env(
+        assets_css_env = self.get_assets_css_env(
+            code_path,
+            output_path
+        )
+        assets_top_js_env = self.get_assets_top_js_env(
+            code_path,
+            output_path
+        )
+        assets_bottom_js_env = self.get_assets_bottom_js_env(
             code_path,
             output_path
         )
         kw.update(**self.config.data)
+        assets_env = {}
+
+        assets_env["css"] = assets_css_env["css"].urls()
+        assets_env["top_js"] = assets_top_js_env["top_js"].urls()
+        assets_env["bottom_js"] = assets_bottom_js_env["bottom_js"].urls()
         kw.update(assets_env=assets_env)
 
         buf = NativeIO()
@@ -390,7 +406,7 @@ class WebSkeleton(object):
         )
         return lookup
 
-    def get_assets_env(self, code_path, output_path):
+    def get_assets_css_env(self, code_path, output_path):
         """ The directory structure of assets is:
             output_path
                 static
@@ -398,7 +414,7 @@ class WebSkeleton(object):
                     js
         """
         output_path = os.path.join(output_path, 'static')
-        assets_env = Environment(output_path, 'static', debug=self.args.verbose)
+        assets_env = Environment(output_path, 'static', debug=True) # No se comprime, fallan las referencias
         assets_env.config['compass_config'] = {
             'additional_import_paths': [
                 os.path.join(code_path, 'scss-mixins')
@@ -412,7 +428,8 @@ class WebSkeleton(object):
 
         if "css_or_scss" in self.config.data:
             for filename in self.config.data["css_or_scss"]:
-                print('Adding filename: %s' % (filename))
+                if self.args.verbose:
+                    print('Adding filename: %s' % (filename))
                 ext = os.path.splitext(filename)[1]
                 if ext == '.scss':
                     scss_list.append(filename)
@@ -426,7 +443,8 @@ class WebSkeleton(object):
 
             scss_bundle = []
             for scss_file in scss_list:
-                print('Processing filename: %s' % (scss_file))
+                if self.args.verbose:
+                    print('Processing filename: %s' % (scss_file))
                 try:
                     xxx = Bundle(
                         scss_file,
@@ -445,6 +463,25 @@ class WebSkeleton(object):
             )
             assets_env.register('css', css)
 
+        return assets_env
+
+    def get_assets_top_js_env(self, code_path, output_path):
+        """ The directory structure of assets is:
+            output_path
+                static
+                    css
+                    js
+        """
+        output_path = os.path.join(output_path, 'static')
+        assets_env = Environment(output_path, 'static', debug=self.args.debug)
+        assets_env.config['compass_config'] = {
+            'additional_import_paths': [
+                os.path.join(code_path, 'scss-mixins')
+            ],
+            #'sass_options': "cache: False", ??? i can't get it.
+            'http_path': "/static",
+        }
+
         top_js_list = []
         if "top_js" in self.config.data:
             top_js_list = self.config.data["top_js"]
@@ -455,6 +492,25 @@ class WebSkeleton(object):
                     output='top.js'
                 )
                 assets_env.register('top_js', top_js)
+
+        return assets_env
+
+    def get_assets_bottom_js_env(self, code_path, output_path):
+        """ The directory structure of assets is:
+            output_path
+                static
+                    css
+                    js
+        """
+        output_path = os.path.join(output_path, 'static')
+        assets_env = Environment(output_path, 'static', debug=self.args.debug)
+        assets_env.config['compass_config'] = {
+            'additional_import_paths': [
+                os.path.join(code_path, 'scss-mixins')
+            ],
+            #'sass_options': "cache: False", ??? i can't get it.
+            'http_path': "/static",
+        }
 
         bottom_js_list = []
         if "bottom_js" in self.config.data:

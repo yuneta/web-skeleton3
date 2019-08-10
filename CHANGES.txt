@@ -28,3 +28,9 @@ Using cssutils and rjsmin to compress css and js files.
 -----
 
 Update README
+
+1.7.2
+-----
+
+In debug mode don't comprise css, references fails
+Fix verbose mode

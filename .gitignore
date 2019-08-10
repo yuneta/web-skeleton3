@@ -1,3 +1,6 @@
+*.komodoproject
+/dist/
+
 a.out
 *.kdev4
 core.*

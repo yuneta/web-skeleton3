@@ -1,23 +1,23 @@
-web-skeleton
-============
+web-skeleton3
+=============
 
 Generator of static html/css/js code tree.
 
 Based on:
-    - `yuicompressor <https://pypi.python.org/pypi/yuicompressor>`_
-    - `mako <https://pypi.python.org/pypi/Mako>`_
-    - `webassets <https://pypi.python.org/pypi/webassets>`_
+    - mako_
+    - webassets_
 
+.. _mako: https://pypi.python.org/pypi/Mako
+.. _webassets: https://pypi.python.org/pypi/webassets
 
 Install
-=======
+-------
 
 Install with::
 
-    easy_install web-skeleton3
+    pip3 install web-skeleton3
 
-
-.. warning:: remember install::
+Remember install::
 
     sudo apt-get install ruby-compass
     sudo pip3 install scour
@@ -29,5 +29,6 @@ License
 
 Copyright (c) 2017,2019 Niyamaka.
 
-`web-skeleton3` is released under terms of the
-`MIT License <http://www.opensource.org/licenses/mit-license>`_.
+`web-skeleton3` is released under terms of the mit_
+
+.. _mit: http://www.opensource.org/licenses/mit-license
