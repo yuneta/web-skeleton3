@@ -23,7 +23,7 @@ requires = [
     'cssutils',
     'mako',
     'webassets',
-    'delegator',
+    'delegator.py',
 ]
 
 setup(

@@ -2,4 +2,4 @@ rjsmin
 cssutils
 mako
 webassets
-delegator
+delegator.py
