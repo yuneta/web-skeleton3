@@ -1,8 +1,8 @@
 Metadata-Version: 2.1
 Name: web-skeleton3
-Version: 1.7.3
+Version: 1.7.4
 Summary: Static html code generator.
-Home-page: https://yuneta.io/yuneta/web-skeleton
+Home-page: https://github.com/yuneta/web-skeleton3
 Author: ginsmar
 Author-email: niyamaka@yuneta.io
 License: MIT License
@@ -37,9 +37,9 @@ Description: web-skeleton3
         
         Copyright (c) 2017,2019 Niyamaka.
         
-        `web-skeleton3` is released under terms of the mit_
+        `web-skeleton3` is released under terms of the MIT_ license.
         
-        .. _mit: http://www.opensource.org/licenses/mit-license
+        .. _MIT: http://www.opensource.org/licenses/mit-license
         
 Keywords: html static generator mako webassets scss sass compass yuneta
 Platform: UNKNOWN

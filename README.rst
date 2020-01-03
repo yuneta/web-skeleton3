@@ -29,6 +29,6 @@ License
 
 Copyright (c) 2017,2019 Niyamaka.
 
-`web-skeleton3` is released under terms of the mit_
+`web-skeleton3` is released under terms of the MIT_ license.
 
-.. _mit: http://www.opensource.org/licenses/mit-license
+.. _MIT: http://www.opensource.org/licenses/mit-license

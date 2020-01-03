@@ -43,7 +43,7 @@ setup(
     ],
     author='ginsmar',
     author_email='niyamaka@yuneta.io',
-    url='https://yuneta.io/yuneta/web-skeleton',
+    url='https://github.com/yuneta/web-skeleton3',
     license='MIT License',
     keywords='html static generator mako webassets scss sass compass yuneta',
     long_description_content_type='text/x-rst',
