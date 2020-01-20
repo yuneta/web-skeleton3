@@ -414,7 +414,7 @@ class WebSkeleton(object):
                     js
         """
         output_path = os.path.join(output_path, 'static')
-        assets_env = Environment(output_path, 'static', debug=True) # No se comprime, fallan las referencias
+        assets_env = Environment(output_path, 'static', debug=self.args.debug)
         assets_env.config['compass_config'] = {
             'additional_import_paths': [
                 os.path.join(code_path, 'scss-mixins')
