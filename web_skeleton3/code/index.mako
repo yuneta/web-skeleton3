@@ -2,7 +2,6 @@
 <html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>${title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,13 +16,13 @@
         % endfor
 
         % if 'css' in assets_env:
-            % for url in assets_env['css'].urls():
+            % for url in assets_env['css']:
         <link rel="stylesheet" href="${url}">
             % endfor
         % endif
 
         % if 'top_js' in assets_env:
-            % for url in assets_env['top_js'].urls():
+            % for url in assets_env['top_js']:
         <script src="${url}"></script>
             % endfor
         % endif
@@ -35,11 +34,13 @@
             to improve your experience and security.</p>
         <![endif]-->
 
-        <div id="your-app">
+        <div id="loading-message"
+            style="border: 1px solid blue; margin: 1em; padding: 2em; background-color: #f8f1fd;">
+            <strong>Loading application. Wait please...</strong>
         </div>
 
     % if 'bottom_js' in assets_env:
-        % for url in assets_env['bottom_js'].urls():
+        % for url in assets_env['bottom_js']:
         <script src="${url}"></script>
         % endfor
     % endif
