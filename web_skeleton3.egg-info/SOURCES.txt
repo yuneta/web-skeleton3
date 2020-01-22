@@ -40,6 +40,7 @@ web_skeleton3/assets/logo/tile.png
 web_skeleton3/code/config.json
 web_skeleton3/code/index.mako
 web_skeleton3/code/app/sample.js
+web_skeleton3/code/scss-mixins/README.txt
 web_skeleton3/setup/.hgignore
 web_skeleton3/setup/Makefile
 web_skeleton3/setup/README.rst
