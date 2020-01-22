@@ -414,9 +414,7 @@ class WebSkeleton(object):
                     js
         """
         output_path = os.path.join(output_path, 'static')
-        # No se comprime, fallan las referencias
-        assets_env = Environment(output_path, 'static', debug=True)
-        # assets_env = Environment(output_path, 'static', debug=self.args.debug)
+        assets_env = Environment(output_path, '/static', debug=self.args.debug)
 
         assets_env.config['compass_config'] = {
             'additional_import_paths': [
@@ -461,7 +459,7 @@ class WebSkeleton(object):
             css = Bundle(
                 css_bundle,
                 *scss_bundle,
-                filters='cssutils',
+                filters='cssutils,cssrewrite',
                 output='packed.css'
             )
             assets_env.register('css', css)
@@ -476,7 +474,7 @@ class WebSkeleton(object):
                     js
         """
         output_path = os.path.join(output_path, 'static')
-        assets_env = Environment(output_path, 'static', debug=self.args.debug)
+        assets_env = Environment(output_path, '/static', debug=self.args.debug)
         assets_env.config['compass_config'] = {
             'additional_import_paths': [
                 os.path.join(code_path, 'scss-mixins')
@@ -506,7 +504,7 @@ class WebSkeleton(object):
                     js
         """
         output_path = os.path.join(output_path, 'static')
-        assets_env = Environment(output_path, 'static', debug=self.args.debug)
+        assets_env = Environment(output_path, '/static', debug=self.args.debug)
         assets_env.config['compass_config'] = {
             'additional_import_paths': [
                 os.path.join(code_path, 'scss-mixins')
