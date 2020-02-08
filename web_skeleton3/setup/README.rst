@@ -12,9 +12,7 @@ A skeleton based on:
 * `Sass <http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html>`_.
 * `Compass <http://compass-style.org/reference/compass/>`_.
 
-.. warning::
+To use scss remember install::
 
-    To use scss remember install::
-
-        sudo apt-get install ruby-compass
-        sudo easy_install -U scour
+    sudo apt-get install ruby-compass
+    sudo easy_install -U scour
