@@ -27,8 +27,5 @@ Remember install::
 License
 -------
 
-Copyright (c) 2017,2019 Niyamaka.
-
-`web-skeleton3` is released under terms of the MIT_ license.
-
-.. _MIT: http://www.opensource.org/licenses/mit-license
+Licensed under the  `The MIT License <http://www.opensource.org/licenses/mit-license>`_.
+See LICENSE.txt in the source distribution for details.

@@ -16,3 +16,10 @@ To use scss remember install::
 
     sudo apt-get install ruby-compass
     sudo easy_install -U scour
+
+
+License
+-------
+
+Licensed under the  `The MIT License <http://www.opensource.org/licenses/mit-license>`_.
+See LICENSE.txt in the source distribution for details.
