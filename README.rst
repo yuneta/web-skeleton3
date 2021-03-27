@@ -19,7 +19,7 @@ Install with::
 
 Remember install::
 
-    sudo apt-get install ruby-compass
+    sudo apt-get install ruby-compass or sudo gem install compass
     sudo pip3 install scour
     sudo pip3 install cssutils
     sudo pip3 install rjsmin
