@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: web-skeleton3
-Version: 1.8.1
+Version: 1.8.2
 Summary: Static html code generator.
 Home-page: https://github.com/yuneta/web-skeleton3
 Author: ginsmar
@@ -27,7 +27,7 @@ Description: web-skeleton3
         
         Remember install::
         
-            sudo apt-get install ruby-compass
+            sudo apt-get install ruby-compass or sudo gem install compass
             sudo pip3 install scour
             sudo pip3 install cssutils
             sudo pip3 install rjsmin
@@ -35,11 +35,8 @@ Description: web-skeleton3
         License
         -------
         
-        Copyright (c) 2017,2019 Niyamaka.
-        
-        `web-skeleton3` is released under terms of the MIT_ license.
-        
-        .. _MIT: http://www.opensource.org/licenses/mit-license
+        Licensed under the  `The MIT License <http://www.opensource.org/licenses/mit-license>`_.
+        See LICENSE.txt in the source distribution for details.
         
 Keywords: html static generator mako webassets scss sass compass yuneta
 Platform: UNKNOWN
