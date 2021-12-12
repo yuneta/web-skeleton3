@@ -15,6 +15,7 @@ web_skeleton3.egg-info/requires.txt
 web_skeleton3.egg-info/top_level.txt
 web_skeleton3/__pycache__/__init__.cpython-35.pyc
 web_skeleton3/__pycache__/__init__.cpython-36.pyc
+web_skeleton3/__pycache__/__init__.cpython-38.pyc
 web_skeleton3/__pycache__/main.cpython-35.pyc
 web_skeleton3/__pycache__/main.cpython-36.pyc
 web_skeleton3/assets/README.txt
@@ -41,6 +42,7 @@ web_skeleton3/code/config.json
 web_skeleton3/code/index.mako
 web_skeleton3/code/app/sample.js
 web_skeleton3/code/scss-mixins/README.txt
+web_skeleton3/setup/.gitignore
 web_skeleton3/setup/.hgignore
 web_skeleton3/setup/Makefile
 web_skeleton3/setup/README.rst
