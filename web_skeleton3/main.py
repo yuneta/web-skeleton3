@@ -305,7 +305,7 @@ class WebSkeleton(object):
 
         target = os.path.join(
             self.current_tag_dir(),
-            'static',
+            "./static",
             subpath
         )
         dir_name = os.path.dirname(target)
@@ -413,15 +413,15 @@ class WebSkeleton(object):
                     css
                     js
         """
-        output_path = os.path.join(output_path, 'static')
-        assets_env = Environment(output_path, '/static', debug=self.args.debug)
+        output_path = os.path.join(output_path, "./static")
+        assets_env = Environment(output_path, "./static", debug=self.args.debug)
 
         assets_env.config['compass_config'] = {
             'additional_import_paths': [
                 os.path.join(code_path, 'scss-mixins')
             ],
             #'sass_options': "cache: False", ??? i can't get it.
-            'http_path': "/static",
+            'http_path': "./static",
         }
 
         css_list = []
@@ -473,14 +473,14 @@ class WebSkeleton(object):
                     css
                     js
         """
-        output_path = os.path.join(output_path, 'static')
-        assets_env = Environment(output_path, '/static', debug=self.args.debug)
+        output_path = os.path.join(output_path, "./static")
+        assets_env = Environment(output_path, "./static", debug=self.args.debug)
         assets_env.config['compass_config'] = {
             'additional_import_paths': [
                 os.path.join(code_path, 'scss-mixins')
             ],
             #'sass_options': "cache: False", ??? i can't get it.
-            'http_path': "/static",
+            'http_path': "./static",
         }
 
         top_js_list = []
@@ -503,14 +503,14 @@ class WebSkeleton(object):
                     css
                     js
         """
-        output_path = os.path.join(output_path, 'static')
-        assets_env = Environment(output_path, '/static', debug=self.args.debug)
+        output_path = os.path.join(output_path, "./static")
+        assets_env = Environment(output_path, "./static", debug=self.args.debug)
         assets_env.config['compass_config'] = {
             'additional_import_paths': [
                 os.path.join(code_path, 'scss-mixins')
             ],
             #'sass_options': "cache: False", ??? i can't get it.
-            'http_path': "/static",
+            'http_path': "./static",
         }
 
         bottom_js_list = []
