@@ -491,13 +491,13 @@ class WebSkeleton(object):
         top_js_list = []
         if "top_js" in self.config.data:
             top_js_list = self.config.data["top_js"]
-            if top_js_list and len(top_js_list):
-                top_js = Bundle(
-                    *top_js_list,
-                    filters='rjsmin',
-                    output='top.js'
-                )
-                assets_env.register('top_js', top_js)
+            # if top_js_list and len(top_js_list):
+        top_js = Bundle(
+            *top_js_list,
+            filters='rjsmin',
+            output='top.js'
+        )
+        assets_env.register('top_js', top_js)
 
         return assets_env
 
@@ -521,13 +521,20 @@ class WebSkeleton(object):
         module_js_list = []
         if "module_js" in self.config.data:
             module_js_list = self.config.data["module_js"]
-            if module_js_list and len(module_js_list):
-                module_js = Bundle(
-                    *module_js_list,
-                    filters='rjsmin',
-                    output='module.js'
-                )
-                assets_env.register('module_js', module_js)
+            # if module_js_list and len(module_js_list):
+            #     module_js = Bundle(
+            #         *module_js_list,
+            #         filters='rjsmin',
+            #         output='module.js'
+            #     )
+            #     assets_env.register('module_js', module_js)
+
+        module_js = Bundle(
+            *module_js_list,
+            filters='rjsmin',
+            output='module.js'
+        )
+        assets_env.register('module_js', module_js)
 
         return assets_env
 
@@ -551,13 +558,13 @@ class WebSkeleton(object):
         bottom_js_list = []
         if "bottom_js" in self.config.data:
             bottom_js_list = self.config.data["bottom_js"]
-            if bottom_js_list and len(bottom_js_list):
-                bottom_js = Bundle(
-                    *bottom_js_list,
-                    filters='rjsmin',
-                    output='bottom.js'
-                )
-                assets_env.register('bottom_js', bottom_js)
+            # if bottom_js_list and len(bottom_js_list):
+        bottom_js = Bundle(
+            *bottom_js_list,
+            filters='rjsmin',
+            output='bottom.js'
+        )
+        assets_env.register('bottom_js', bottom_js)
 
         return assets_env
 
