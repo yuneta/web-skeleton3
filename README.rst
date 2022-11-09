@@ -24,6 +24,12 @@ Remember install::
     sudo pip3 install cssutils
     sudo pip3 install rjsmin
 
+Upload to pypi
+--------------
+
+python setup.py sdist bdist_wheel
+python -m twine upload dist/*
+
 License
 -------
 

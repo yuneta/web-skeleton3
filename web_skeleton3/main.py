@@ -357,6 +357,10 @@ class WebSkeleton(object):
             code_path,
             output_path
         )
+        assets_module_js_env = self.get_assets_module_js_env(
+            code_path,
+            output_path
+        )
         assets_bottom_js_env = self.get_assets_bottom_js_env(
             code_path,
             output_path
@@ -366,6 +370,7 @@ class WebSkeleton(object):
 
         assets_env["css"] = assets_css_env["css"].urls()
         assets_env["top_js"] = assets_top_js_env["top_js"].urls()
+        assets_env["module_js"] = assets_module_js_env["module_js"].urls()
         assets_env["bottom_js"] = assets_bottom_js_env["bottom_js"].urls()
         kw.update(assets_env=assets_env)
 
@@ -493,6 +498,36 @@ class WebSkeleton(object):
                     output='top.js'
                 )
                 assets_env.register('top_js', top_js)
+
+        return assets_env
+
+    def get_assets_module_js_env(self, code_path, output_path):
+        """ The directory structure of assets is:
+            output_path
+                static
+                    css
+                    js
+        """
+        output_path = os.path.join(output_path, "./static")
+        assets_env = Environment(output_path, "./static", debug=self.args.debug)
+        assets_env.config['compass_config'] = {
+            'additional_import_paths': [
+                os.path.join(code_path, 'scss-mixins')
+            ],
+            #'sass_options': "cache: False", ??? i can't get it.
+            'http_path': "./static",
+        }
+
+        module_js_list = []
+        if "module_js" in self.config.data:
+            module_js_list = self.config.data["module_js"]
+            if module_js_list and len(module_js_list):
+                module_js = Bundle(
+                    *module_js_list,
+                    filters='rjsmin',
+                    output='module.js'
+                )
+                assets_env.register('module_js', module_js)
 
         return assets_env
 
