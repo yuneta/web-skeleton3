@@ -368,10 +368,26 @@ class WebSkeleton(object):
         kw.update(**self.config.data)
         assets_env = {}
 
-        assets_env["css"] = assets_css_env["css"].urls()
-        assets_env["top_js"] = assets_top_js_env["top_js"].urls()
-        assets_env["module_js"] = assets_module_js_env["module_js"].urls()
-        assets_env["bottom_js"] = assets_bottom_js_env["bottom_js"].urls()
+        try:
+            assets_env["css"] = assets_css_env["css"].urls()
+        except Exception as error:
+            pass
+
+        try:
+            assets_env["top_js"] = assets_top_js_env["top_js"].urls()
+        except Exception as error:
+            pass
+
+        try:
+            assets_env["module_js"] = assets_module_js_env["module_js"].urls()
+        except Exception as error:
+            pass
+
+        try:
+            assets_env["bottom_js"] = assets_bottom_js_env["bottom_js"].urls()
+        except Exception as error:
+            pass
+
         kw.update(assets_env=assets_env)
 
         buf = NativeIO()
