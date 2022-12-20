@@ -30,10 +30,7 @@ except:  # pragma: no cover
 if sys.version_info[:2] < (3, 5):
    raise RuntimeError('Requires Python 3.5 or better')
 
-try:  # pragma: no cover
-    from ConfigParser import ConfigParser
-except:  # pragma: no cover
-    from configparser import ConfigParser
+from configparser import ConfigParser
 
 import logging
 logging.basicConfig(level=logging.DEBUG)
@@ -47,10 +44,6 @@ try:
 except ImportError: # pragma: no cover
     from io import StringIO as NativeIO
 
-try:
-    input = raw_input
-except NameError:
-    pass
 
 def getyesno(message, default='y'):
     """ Utility for ask yes or no
@@ -368,25 +361,37 @@ class WebSkeleton(object):
         kw.update(**self.config.data)
         assets_env = {}
 
+        some_error = False
         try:
             assets_env["css"] = assets_css_env["css"].urls()
         except Exception as error:
+            some_error = True
+            print(error)
             pass
 
         try:
             assets_env["top_js"] = assets_top_js_env["top_js"].urls()
         except Exception as error:
+            some_error = True
+            print(error)
             pass
 
         try:
             assets_env["module_js"] = assets_module_js_env["module_js"].urls()
         except Exception as error:
+            some_error = True
+            print(error)
             pass
 
         try:
             assets_env["bottom_js"] = assets_bottom_js_env["bottom_js"].urls()
         except Exception as error:
+            some_error = True
+            print(error)
             pass
+
+        if some_error:
+            return -1
 
         kw.update(assets_env=assets_env)
 

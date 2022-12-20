@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: web-skeleton3
-Version: 2.0.2
+Version: 2.0.3
 Summary: Static html code generator.
 Home-page: https://github.com/yuneta/web-skeleton3
 Author: ginsmar
@@ -40,7 +40,8 @@ Install with::
 
 Remember install::
 
-    sudo apt-get install ruby-compass or sudo gem install compass
+    sudo apt-get install ruby-dev ruby-rubygems
+    sudo gem install compass
     sudo pip3 install scour
     sudo pip3 install cssutils
     sudo pip3 install rjsmin
