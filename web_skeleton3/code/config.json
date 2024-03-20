@@ -8,6 +8,8 @@
     "css_or_scss": [
         "h5bp/css/normalize.css"
     ],
+    "module_js": [
+    ],
     "top_js": [
         "h5bp/js/modernizr.js",
         "h5bp/js/plugins.js"
