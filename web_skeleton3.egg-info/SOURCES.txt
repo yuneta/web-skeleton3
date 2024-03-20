@@ -14,6 +14,7 @@ web_skeleton3.egg-info/not-zip-safe
 web_skeleton3.egg-info/requires.txt
 web_skeleton3.egg-info/top_level.txt
 web_skeleton3/__pycache__/__init__.cpython-310.pyc
+web_skeleton3/__pycache__/__init__.cpython-311.pyc
 web_skeleton3/__pycache__/main.cpython-310.pyc
 web_skeleton3/assets/README.txt
 web_skeleton3/assets/h5bp/404.html
