@@ -6,6 +6,8 @@ debug/
 .idea/
 *.komodoproject
 /dist/
+venv/
+.pdm-python
 
 a.out
 *.kdev4
